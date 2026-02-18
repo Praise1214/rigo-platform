@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+@theme {
+  --color-teal: #1C8E9C;
+  --color-teal-dark: #145A61;
+  --color-teal-light: #E6F4F6;
+  --color-accent: #F4A623;
+  --color-accent-hover: #d9921a;
+  --color-charcoal: #2B2B2B;
+  --color-cream: #F5F1EB;
+  --color-cream-dark: #EDE8E0;
+  --color-gray-soft: #F8F9FA;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Playfair Display','Montserrat', ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-charcoal);
+  background: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Display heading utility */
+.heading-display {
+  font-family: var(--font-display);
+  font-weight: 1000;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+}
+
+/* Image clip text effect */
+.text-clip-image {
+  background-size: cover;
+  background-position: center;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Pill button base */
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 14px 22px;
+  transition: all 0.2s ease;
+}
+
+.btn-pill-primary {
+  background: var(--color-accent);
+  color: #fff;
+}
+.btn-pill-primary:hover {
+  background: var(--color-accent-hover);
+}
+
+.btn-pill-outline {
+  background: transparent;
+  border: 1.5px solid var(--color-charcoal);
+  color: var(--color-charcoal);
+}
+.btn-pill-outline:hover {
+  background: var(--color-charcoal);
+  color: #fff;
+}
+
+.btn-pill-outline-white {
+  background: transparent;
+  border: 1.5px solid rgba(255,255,255,0.5);
+  color: #fff;
+}
+.btn-pill-outline-white:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: #fff;
+}
+
+/* Accent highlight word in heading */
+.accent-word {
+  color: var(--color-accent);
+}
+
+/* Horizontal scroll container */
+.scroll-x {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.scroll-x::-webkit-scrollbar {
+  display: none;
+}
+.scroll-x > * {
+  scroll-snap-align: start;
+}
+
+/* Rounded card style */
+.card-rounded {
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+/* Stat number large */
+.stat-number {
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* Markdown content styles */
+.prose h1 { font-size: 2rem; font-weight: 700; margin: 1.5rem 0 1rem; }
+.prose h2 { font-size: 1.5rem; font-weight: 700; margin: 1.25rem 0 0.75rem; }
+.prose h3 { font-size: 1.25rem; font-weight: 600; margin: 1rem 0 0.5rem; }
+.prose p { margin: 0.75rem 0; line-height: 1.7; }
+.prose ul { list-style: disc; margin: 0.75rem 0; padding-left: 1.5rem; }
+.prose ol { list-style: decimal; margin: 0.75rem 0; padding-left: 1.5rem; }
+.prose li { margin: 0.25rem 0; }
+.prose blockquote {
+  border-left: 4px solid var(--color-teal);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: #555;
+  font-style: italic;
+}
+.prose a { color: var(--color-teal); text-decoration: underline; }
+.prose img { max-width: 100%; border-radius: 16px; margin: 1rem 0; }
