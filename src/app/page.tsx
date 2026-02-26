@@ -3,7 +3,9 @@
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { siteConfig } from '@/config/site.config'
 import gsap from 'gsap'
+import ImpactCounter from '@/components/ui/ImpactCounter'
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 
@@ -44,7 +46,7 @@ export default function Home() {
         <div className="max-w-[1500px] mx-auto px-6 lg:px-8 py-6">
           <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: '16 / 7' }}>
             <Image
-              src="/images/showcase-digital-skills.jpg"
+              src="/images/showcase-digital-skills.JPG"
               alt="RIGO facilitator leading a Google Digital Skills workshop"
               fill
               priority
@@ -136,6 +138,77 @@ export default function Home() {
             </div>
           </div>
         </section>
+      </section>
+
+      {/*Impact Number */}
+      <ImpactCounter />
+
+      {/* ─── WHAT WE DO ─── */}
+            <section className="py-10 lg:py-15 bg-teal text-white">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="heading-display text-[clamp(1.6rem,3.5vw,2.8rem)]">
+              WHAT WE DO
+            </h2>
+            <p className="mt-4 text-white  text-xl  mx-auto font-display font-bold">
+              Education, entrepreneurship, and civic engagement, turning potential into lasting change.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+            {siteConfig.initiatives.map((initiative) => (
+              <Link
+                key={initiative.id}
+                href={`/initiatives#${initiative.id}`}
+                className="group relative rounded-2xl overflow-hidden min-h-[280px] flex flex-col justify-end p-6"
+              >
+                <div className="absolute inset-0 bg-teal-dark">
+                  <Image
+                    src={`/images/${initiative.id}-1.jpg`}
+                    alt={initiative.title}
+                    fill
+                    className="object-cover opacity-30 group-hover:opacity-50 group-hover:scale-105 transition-all duration-500"
+                    sizes="(max-width: 640px) 100vw, 25vw"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 border border-white/20 flex items-center justify-center group-hover:bg-accent group-hover:border-accent transition-all duration-300">
+                  <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7v10" />
+                  </svg>
+                </div>
+                <div className="relative z-10">
+                  <h3 className="heading-display text-lg text-white mb-1">{initiative.shortTitle}</h3>
+                  <p className="text-white/50 text-xs leading-relaxed">{initiative.tagline}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+            {/* ─── STORIES ─── */}
+      <section className="py-20 lg:py-24 bg-cream">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="heading-display text-[clamp(1.6rem,3.5vw,2.8rem)] text-charcoal">
+              HEAR OUR <span className="accent-word">STORIES</span>
+            </h2>
+            <p className="mt-4 text-charcoal/50 text-base max-w-md mx-auto">
+              Real voices from the front lines of change.
+            </p>
+          </div>
+
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-8">
+            <Link href="/impact-stories" className="btn-pill btn-pill-primary">
+              See All Stories
+            </Link>
+            <Link href="/membership" className="btn-pill btn-pill-outline">
+              Share Your Story
+            </Link>
+          </div>
+        </div>
       </section>
     </>
   );

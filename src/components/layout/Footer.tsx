@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="bg-teal text-white">
       {/* Main Footer */}
       <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 pt-20 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-8">
           {/* Brand */}
           <div className="-mt-18 -ml-3 sm:-ml-4 lg:-ml-25 self-start">
             <div className="inline-flex items-center justify-start mb-4">
@@ -45,19 +45,6 @@ export default function Footer() {
           </div>
 
           {/* Column 2 */}
-          <div>
-            <ul className="space-y-3">
-              {siteConfig.initiatives.map((init) => (
-                <li key={init.id}>
-                  <Link href={`/initiatives#${init.id}`} className="text-sm text-white/70 hover:text-accent transition-colors">
-                    {init.shortTitle}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 3 */}
           <div>
             <ul className="space-y-3">
               {[
