@@ -3,20 +3,21 @@ export const siteConfig = {
   shortName: 'RIGO',
   description: 'Empowering Nigeria\'s next generation of leaders through education, entrepreneurship, career development and civic engagement.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://risinggeneration.org',
-  email: 'info@risinggeneration.org',
-  phone: '+234 XXX XXX XXXX',
+  email: 'risinggenerationorg@gmail.com',
+  phone: '+234 703 059 3927',
   whatsapp: 'https://wa.me/234XXXXXXXXXX',
   address: {
-    street: 'Plot XX, XXXX Street',
-    city: 'Abuja',
-    state: 'FCT',
+    street: '4 Ilupeju Bypass, Olajire House',
+    city: 'Onipanu',
+    state: 'Lagos',
+    zip: '102215',
     country: 'Nigeria',
   },
   social: {
-    instagram: 'https://instagram.com/risinggeneration_ng',
-    twitter: 'https://twitter.com/raborigo',
-    facebook: 'https://facebook.com/risinggeneration',
-    linkedin: 'https://linkedin.com/company/rising-generation-ng',
+    instagram: 'https://www.instagram.com/risinggenerationorg?igsh=ZnF2bTRmNTN5Yzdt',
+    twitter: 'https://x.com/risinggenorg?s=21',
+    facebook: 'https://www.facebook.com/share/14UrvnUpyxg/',
+    linkedin: 'https://www.linkedin.com/company/rising-generation-organisation-for-youthempowerment/',
   },
   initiatives: [
     {
@@ -36,8 +37,8 @@ export const siteConfig = {
     },
     {
       id: 'rigo-careers',
-      title: 'RIGO Careers',
-      shortTitle: 'RIGO Careers',
+      title: 'RG Careers',
+      shortTitle: 'RG Careers',
       tagline: 'Connecting Youth to Opportunities',
       description: 'We help youths find jobs by providing skills necessary for employment, career guidance, and connecting them with employers who value young talent. RIGO Careers bridges the gap between education and employment, ensuring that young Nigerians are workforce-ready and can access meaningful career opportunities.',
       features: [

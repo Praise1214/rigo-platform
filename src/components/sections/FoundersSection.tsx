@@ -26,7 +26,7 @@ const founders: Founder[] = [
     image: '/images/founders/adesuwa1.png',
   },
   {
-    name: 'MUKTHAR SHAGAYA',
+    name: 'MUKTAR SHAGAYA',
     role: 'Co-Founder',
     bio: 'An accomplished strategist with deep expertise in youth development, policy advocacy, and building sustainable social enterprises.',
     image: '/images/founders/mukthar1.png',

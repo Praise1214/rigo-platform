@@ -19,16 +19,17 @@ export default function ImpactStoriesPage() {
         accentWord="Impact"
       />
 
-      <section className="py-20 lg:py-24 bg-charcoal">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-8 mb-4">
+      <section className="pt-14 pb-10 lg:pt-10 lg:pb-10 bg-charcoal/70">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-8 mb-0">
           <SectionHeading
-            label={instagramHandle}
             title="Our Story in Pictures"
             subtitle="Follow our journey as we empower youth across Nigeria"
             accentWord="Story"
           />
         </div>
-        <ImpactCircularGallery />
+        <div className="-mt-8 lg:-mt-25">
+          <ImpactCircularGallery />
+        </div>
       </section>
 
       {/* Gallery */}

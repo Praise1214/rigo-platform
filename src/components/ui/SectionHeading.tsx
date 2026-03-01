@@ -12,7 +12,7 @@ export default function SectionHeading({ label, title, subtitle, centered = true
   return (
     <div className={`mb-12 ${centered ? 'text-center' : ''}`}>
       {label && (
-        <span className="inline-block text-[39px] font-bold uppercase tracking-[0.03em] text-teal mb-1">
+        <span className="inline-block text-[32px] font-bold uppercase tracking-[0.03em] text-teal mb-1">
           {label}
         </span>
       )}
@@ -22,7 +22,7 @@ export default function SectionHeading({ label, title, subtitle, centered = true
         ) : title}
       </h2>
       {subtitle && (
-        <p className="mt-4 text-charcoal/50 text-base lg:text-lg max-w-xl mx-auto leading-relaxed">
+        <p className="mt-4 text-charcoal text-base lg:text-lg max-w-xl mx-auto leading-relaxed">
           {subtitle}
         </p>
       )}

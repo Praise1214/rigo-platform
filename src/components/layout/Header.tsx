@@ -4,13 +4,14 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from 'next/navigation'
+import JoinRigoBubbleMenu from "../ui/JoinRigoBubbleMenu"
 
 const navLinks = [
   {href: '/', label: 'Home'},
   { href: '/about', label: 'About' },
   { href: '/initiatives', label: 'Programs' },
   { href: '/impact-stories', label: 'Stories' },
-  { href: '/blog', label: 'Blog' },
+  { href: '/contact', label: 'Contact us' },
   { href: '/team', label: 'Team' },
 ]
 
@@ -71,38 +72,35 @@ export default function Header() {
           </nav>
 
           {/* Right side */}
-          <div className="flex items-center gap-3 sm:gap-6">
-            <div className="hidden lg:flex items-center gap-6">
-              <Link
-                href="/membership"
-                className="btn-pill btn-pill-primary text-[12px]"
-              >
-                Become a Member
-              </Link>
-
-              <Link
-                href="/donate"
-                className="btn-pill btn-pill-outline text-[12px]"
-              >
-                Donate
-              </Link>
+          <div className="flex items-center gap-2.5">
+            <Link
+              href="/donate"
+              className="hidden md:inline-flex btn-pill btn-pill-outline text-[11px] py-2.5 px-5"
+            >
+              Donate
+            </Link>
+            <div className="hidden sm:block">
+              <JoinRigoBubbleMenu variant="desktop" />
             </div>
 
+            {/* Mobile Toggle */}
             <button
-              type="button"
-              onClick={() => setMobileOpen((prev) => !prev)}
-              className="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-charcoal/15 text-charcoal hover:bg-charcoal/5 transition-colors"
-              aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={mobileOpen}
-              aria-controls="mobile-menu"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="lg:hidden w-10 h-10 flex items-center justify-center rounded-full hover:bg-charcoal/5 transition-colors"
+              aria-label="Toggle menu"
             >
-              <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                {mobileOpen ? (
-                  <path d="M6 6l12 12M18 6L6 18" />
-                ) : (
-                  <path d="M4 7h16M4 12h16M4 17h16" />
-                )}
-              </svg>
+              <div className="w-5 flex flex-col gap-[5px]">
+                <span
+                  className={`block h-[1.5px] bg-charcoal rounded-full transition-all duration-300 origin-center ${
+                    mobileOpen ? 'rotate-45 translate-y-[3.25px]' : ''
+                  }`}
+                />
+                <span
+                  className={`block h-[1.5px] bg-charcoal rounded-full transition-all duration-300 origin-center ${
+                    mobileOpen ? '-rotate-45 -translate-y-[3.25px]' : ''
+                  }`}
+                />
+              </div>
             </button>
           </div>
         </div>
@@ -123,9 +121,7 @@ export default function Header() {
               </Link>
             ))}
             <div className="pt-4 flex flex-col gap-3 px-4">
-              <Link href="/membership" onClick={() => setMobileOpen(false)} className="btn-pill btn-pill-primary text-center">
-                Become a Member
-              </Link>
+              <JoinRigoBubbleMenu variant="mobile" onNavigate={() => setMobileOpen(false)} />
               <Link href="/donate" onClick={() => setMobileOpen(false)} className="btn-pill btn-pill-outline text-center">
                 Donate
               </Link>
