@@ -1,12 +1,13 @@
 import Link from "next/link"
 import { siteConfig } from "@/config/site.config"
+import NewsletterForm from "@/components/forms/NewsletterForm"
 
 export default function Footer() {
   return (
     <footer className="bg-teal text-white">
       {/* Main Footer */}
       <div className="max-w-[1300px] mx-auto px-6 sm:px-8 lg:px-8 pt-14 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
           {/* Brand */}
           <div className="-mt-10 -ml-3 sm:-ml-4 lg:-ml-22 self-start">
             <div className="inline-flex items-center justify-start mb-4">
@@ -41,7 +42,7 @@ export default function Footer() {
           </div>
 
           {/* Column 2 */}
-          <div className="-ml-20 mt-5">
+          <div className=" ml-6 mt-5">
             <h3 className="text-[21px] font-bold uppercase tracking-[0.1em] text-white/30 mb-5">Get Involved</h3>
             <ul className="space-y-3">
               {[
@@ -56,6 +57,15 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+          </div>
+
+          {/* Newsletter */}
+          <div className="mt-5 ml-10">
+            <h3 className="text-[21px] font-bold uppercase tracking-[0.1em] text-white/30 mb-2">Newsletter</h3>
+            <p className="text-white/90 text-[17px] leading-relaxed mb-4 font-display">
+              Get updates on our programs, events, and impact stories.
+            </p>
+            <NewsletterForm />
           </div>
         </div>
       </div>

@@ -37,3 +37,8 @@ export type BlogPost = Prisma.BlogPostModel
  * 
  */
 export type ContactMessage = Prisma.ContactMessageModel
+/**
+ * Model Subscriber
+ * 
+ */
+export type Subscriber = Prisma.SubscriberModel
