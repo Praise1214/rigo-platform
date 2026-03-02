@@ -1,6 +1,5 @@
 import PageHero from '@/components/ui/PageHero'
 import SectionHeading from '@/components/ui/SectionHeading'
-import { instagramHandle } from '@/config/instagram.config'
 import ImpactGallerySection from '@/components/sections/ImpactGallerySection'
 import ImpactCircularGallery from '@/components/sections/ImpactCircularGallery'
 import type { Metadata } from 'next'

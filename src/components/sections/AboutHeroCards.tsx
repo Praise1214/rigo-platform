@@ -17,7 +17,9 @@ const aboutImages = [
 export default function AboutHeroCards() {
   return (
     <section className="py-16 lg:py-20 bg-charcoal overflow-hidden">
+      {/* Scale wrapper: on small screens, compress the 1000px fan of cards to fit viewport */}
       <div className="flex items-center justify-center">
+        <div className="origin-center scale-[0.38] xs:scale-[0.48] sm:scale-[0.58] md:scale-[0.8] lg:scale-100">
         <BounceCards
           images={aboutImages}
           containerWidth={1000}
@@ -38,6 +40,7 @@ export default function AboutHeroCards() {
           ]}
           enableHover={true}
         />
+        </div>
       </div>
     </section>
   )

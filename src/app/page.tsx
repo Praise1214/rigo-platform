@@ -4,44 +4,48 @@ import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { siteConfig } from '@/config/site.config'
-import gsap from 'gsap'
 import ImpactCounter from '@/components/ui/ImpactCounter'
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-
 
 export default function Home() {
   const whoWeAreFrameRef = useRef<HTMLDivElement>(null)
-  const whoWeAreImageRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (!whoWeAreFrameRef.current) return
 
-    gsap.registerPlugin(ScrollTrigger)
+    let ctx: { revert: () => void } | null = null
 
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        whoWeAreFrameRef.current,
-        { autoAlpha: 0, x: 100 },
-        {
-          autoAlpha: 1,
-          x: 0,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: whoWeAreFrameRef.current,
-            start: "top 80%",   // when top of element hits 80% viewport
-            once: true,         // only animate once
-          },
-        }
-      )
-    }, whoWeAreFrameRef)
+    // Dynamically import GSAP so it's not in the initial JS bundle
+    Promise.all([
+      import('gsap'),
+      import('gsap/ScrollTrigger'),
+    ]).then(([{ default: gsap }, { ScrollTrigger }]) => {
+      gsap.registerPlugin(ScrollTrigger)
 
-    return () => ctx.revert()
+      ctx = gsap.context(() => {
+        gsap.fromTo(
+          whoWeAreFrameRef.current,
+          { autoAlpha: 0, x: 100 },
+          {
+            autoAlpha: 1,
+            x: 0,
+            duration: 1,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: whoWeAreFrameRef.current,
+              start: 'top 80%',
+              once: true,
+            },
+          }
+        )
+      }, whoWeAreFrameRef)
+    })
+
+    return () => ctx?.revert()
   }, [])
-
 
   return (
     <>
+      {/* ─── HERO ─── */}
       <section className="">
         <div className="max-w-[1500px] mx-auto px-6 lg:px-8 py-6">
           <div className="relative rounded-2xl overflow-hidden aspect-[4/3] sm:aspect-[16/9] lg:aspect-[16/7]">
@@ -51,7 +55,7 @@ export default function Home() {
               fill
               priority
               className="object-cover object-top"
-              sizes="(max-width: 1200px) 100vw, 1200px"
+              sizes="(max-width: 1500px) 100vw, 1500px"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-8">
@@ -70,74 +74,62 @@ export default function Home() {
         </div>
       </section>
 
-      {/* WHO WE ARE */}
-      <section>
-        <section className="py-20 lg:py-24 bg-white">
-          <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <span className="text-[31px] font-bold uppercase tracking-[0.1em] text-teal mb-3 block font-montserrat">Who We Are</span>
-                <h2 className="heading-display text-[clamp(1.6rem,3vw,2.6rem)] text-charcoal mb-5">
-                  A MOVEMENT FOR<br />NIGERIA&apos;S YOUTH
-                </h2>
-                <p className="text-charcoal text-base leading-relaxed text-justify mb-5">
-                  Rising Generation (RIGO) is a youth-led movement dedicated to building the next
-                  generation of Nigerian leaders. Through our initiatives in entrepreneurship,
-                  career development, civic engagement, and education, we equip young Nigerians
-                  with the tools and mindset to drive national progress.
-                </p>
-                <p className="text-charcoal text-base leading-relaxed text-justify mb-7">
-                  We believe that when young people are empowered with the right skills, values,
-                  and opportunities, they become the architects of a prosperous and united Nigeria.
-                </p>
-                <Link href="/about" className="btn-pill btn-pill-outline">
-                  Learn More About Us
-                </Link>
-              </div>
-              <div ref={whoWeAreFrameRef} className="relative w-full max-w-[620px] mx-auto lg:ml-auto">
-                  {/* Soft ambient glow (subtle) */}
+      {/* ─── WHO WE ARE ─── */}
+      <section className="py-20 lg:py-24 bg-white">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="text-[31px] font-bold uppercase tracking-[0.1em] text-teal mb-3 block font-montserrat">Who We Are</span>
+              <h2 className="heading-display text-[clamp(1.6rem,3vw,2.6rem)] text-charcoal mb-5">
+                A MOVEMENT FOR<br />NIGERIA&apos;S YOUTH
+              </h2>
+              <p className="text-charcoal text-base leading-relaxed text-justify mb-5">
+                Rising Generation (RIGO) is a youth-led movement dedicated to building the next
+                generation of Nigerian leaders. Through our initiatives in entrepreneurship,
+                career development, civic engagement, and education, we equip young Nigerians
+                with the tools and mindset to drive national progress.
+              </p>
+              <p className="text-charcoal text-base leading-relaxed text-justify mb-7">
+                We believe that when young people are empowered with the right skills, values,
+                and opportunities, they become the architects of a prosperous and united Nigeria.
+              </p>
+              <Link href="/about" className="btn-pill btn-pill-outline">
+                Learn More About Us
+              </Link>
+            </div>
+            <div ref={whoWeAreFrameRef} className="relative w-full max-w-[620px] mx-auto lg:ml-auto">
+              {/* Soft ambient glow */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -inset-6 rounded-[2rem] bg-[radial-gradient(60%_60%_at_70%_30%,rgba(28,142,156,0.22)_0%,rgba(244,166,35,0.12)_35%,transparent_70%)] blur-2xl"
+              />
+              {/* Frame */}
+              <div className="relative rounded-[1.75rem] bg-white/70 backdrop-blur p-[10px] shadow-[0_18px_60px_-30px_rgba(0,0,0,0.45)] ring-1 ring-black/5">
+                <div className="relative aspect-[4/4] w-full overflow-hidden rounded-[1.2rem] bg-teal-light">
+                  <Image
+                    src="/images/who-we-are.jpg"
+                    alt="RIGO Youth Leaders"
+                    fill
+                    className="h-full w-full object-fill"
+                    sizes="(max-width: 1024px) 100vw, 48vw"
+                    loading="lazy"
+                  />
                   <div
                     aria-hidden
-                    className="pointer-events-none absolute -inset-6 rounded-[2rem] bg-[radial-gradient(60%_60%_at_70%_30%,rgba(28,142,156,0.22)_0%,rgba(244,166,35,0.12)_35%,transparent_70%)] blur-2xl"
+                    className="pointer-events-none absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.35)_0%,transparent_35%)]"
                   />
-
-                  {/* Frame */}
-                  <div className="relative rounded-[1.75rem] bg-white/70 backdrop-blur p-[10px] shadow-[0_18px_60px_-30px_rgba(0,0,0,0.45)] ring-1 ring-black/5">
-                    {/* Inner border for “crafted” look */}
-
-                    {/* Image wrapper */}
-                    <div
-                      className="relative aspect-[4/4] w-full overflow-hidden rounded-[1.2rem] bg-teal-light"
-                    >
-                      <Image
-                        src="/images/who-we-are.jpg"
-                        alt="RIGO Youth Leaders"
-                        fill
-                        className="h-full w-full object-fill"
-                        sizes="(max-width: 1024px) 100vw, 48vw"
-                        priority={false}
-                      />
-
-                      {/* Soft highlight + vignette (makes it feel intentional) */}
-                      <div
-                        aria-hidden
-                        className="pointer-events-none absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.35)_0%,transparent_35%)]"
-                      />
-                      <div
-                        aria-hidden
-                        className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_90%_at_50%_10%,transparent_35%,rgba(0,0,0,0.25)_100%)] opacity-40"
-                      />
-                    </div>
-                  </div>
+                  <div
+                    aria-hidden
+                    className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_90%_at_50%_10%,transparent_35%,rgba(0,0,0,0.25)_100%)] opacity-40"
+                  />
                 </div>
-
+              </div>
             </div>
           </div>
-
-        </section>
+        </div>
       </section>
 
-      {/*Impact Number */}
+      {/* ─── IMPACT COUNTER ─── */}
       <ImpactCounter />
 
       {/* ─── WHAT WE DO ─── */}
@@ -165,7 +157,7 @@ export default function Home() {
                     alt={initiative.title}
                     fill
                     className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
-                    sizes="(max-width: 640px) 100vw, 25vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     loading="lazy"
                   />
                 </div>
@@ -196,7 +188,6 @@ export default function Home() {
             </p>
           </div>
 
-
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-8">
             <Link href="/impact-stories" className="btn-pill btn-pill-primary">
               See All Stories
@@ -208,5 +199,5 @@ export default function Home() {
         </div>
       </section>
     </>
-  );
+  )
 }

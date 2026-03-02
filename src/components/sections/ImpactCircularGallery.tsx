@@ -26,7 +26,7 @@ const galleryItems = [
 
 export default function ImpactCircularGallery() {
   return (
-    <div className="w-full h-[700px] relative">
+    <div className="w-full h-[320px] sm:h-[500px] lg:h-[700px] relative">
       <CircularGallery
         items={galleryItems}
         bend={1}

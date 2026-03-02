@@ -139,6 +139,7 @@ export default function VolunteerPage() {
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 33vw, 200px"
+                  loading="lazy"
                 />
               </div>
               <div className="aspect-[3/4] relative rounded-2xl overflow-hidden mt-6">
@@ -148,6 +149,7 @@ export default function VolunteerPage() {
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 33vw, 200px"
+                  loading="lazy"
                 />
               </div>
               <div className="aspect-[3/4] relative rounded-2xl overflow-hidden">
@@ -157,6 +159,7 @@ export default function VolunteerPage() {
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 33vw, 200px"
+                  loading="lazy"
                 />
               </div>
             </div>

@@ -159,7 +159,10 @@ export default function BounceCards({
             className="w-full h-full object-cover"
             src={src}
             alt={`RIGO community activity ${idx + 1}`}
-            loading="eager"
+            loading="lazy"
+            decoding="async"
+            width={300}
+            height={400}
           />
         </div>
       ))}
