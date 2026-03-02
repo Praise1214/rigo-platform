@@ -35,7 +35,7 @@ const founders: Founder[] = [
     name: 'GBOLAHAN OGUNNUSI',
     role: 'Founding Member',
     bio: 'A passionate advocate for education and community development, driving impactful programs that reach thousands of young Nigerians.',
-    image: '/images/founders/Gbolahan.png',
+    image: '/images/founders/gbolahan1.png',
   },
   {
     name: 'EIZU UWAOMA',
