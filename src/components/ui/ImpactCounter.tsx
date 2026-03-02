@@ -13,9 +13,9 @@ interface StatItem {
 }
 
 const stats: StatItem[] = [
-  { value: '5,000', numericValue: 5000, suffix: '+', label: 'Youth Empowered', desc: 'Trained, mentored and supported young Nigerians across all 36 states.' },
-  { value: '50', numericValue: 50, suffix: '+', label: 'Programs Delivered', desc: 'Local solutions that change lives, from entrepreneurship to civic education.' },
-  { value: '200', numericValue: 200, suffix: '+', label: 'Volunteers Active', desc: 'Community leaders and trained volunteers driving impact nationwide.' },
+  { value: '20,000', numericValue: 20000, suffix: '+', label: 'Youth Empowered', desc: 'Trained, mentored and supported young Nigerians across all 36 states.' },
+  { value: '200', numericValue: 200, suffix: '+', label: 'Programs Delivered', desc: 'Local solutions that change lives, from entrepreneurship to civic education.' },
+  { value: '300', numericValue: 300, suffix: '+', label: 'Volunteers Active', desc: 'Community leaders and trained volunteers driving impact nationwide.' },
 ]
 
 function formatNumber(n:number): string {

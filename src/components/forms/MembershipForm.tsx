@@ -36,11 +36,18 @@ export default function MembershipForm() {
     }
 
     const data = {
-      fullName: formData.get('fullName') as string,
-      email: formData.get('email') as string,
-      phone: formData.get('phone') as string,
+      fullName: `${formData.get('firstName') ?? ''} ${formData.get('lastName') ?? ''}`.trim(),
+      email: email.trim(),
+      phone: phoneNumber.trim(),
       state: formData.get('state') as string,
       occupation: formData.get('occupation') as string,
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(data.email)) {
+      setError('Please enter a valid email address.')
+      setLoading(false)
+      return
     }
 
     try {
@@ -124,10 +131,8 @@ export default function MembershipForm() {
             type="text"
             required
             inputMode="email"
-            pattern="^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$"
-            title="Please enter a valid email address"
             autoComplete="new-password"
-            autoCorrect="on"
+            autoCorrect="off"
             autoCapitalize="off"
             spellCheck={false}
             value={email}
@@ -188,7 +193,7 @@ export default function MembershipForm() {
         <div className="bg-red-50 text-red-700 px-4 py-2.5 rounded-xl text-sm">{error}</div>
       )}
 
-      <button type="submit" disabled={loading} className="w-full mt-4 btn-pill btn-pill-primary disabled:opacity-60 mt-1">
+      <button type="submit" disabled={loading} className="w-full mt-4 btn-pill btn-pill-primary disabled:opacity-60 mt-1 hover:cursor-pointer">
         {loading ? 'Registering...' : 'Register as Member'}
       </button>
     </form>

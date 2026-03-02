@@ -10,12 +10,12 @@ const CircularGallery = dynamic(() => import('@/components/ui/CircularGallery'),
 })
 
 const galleryItems = [
-  { image: '/images/impact-1.jpg', text: 'YoungCEO Workshop' },
-  { image: '/images/impact-2.jpg', text: 'Skills Training' },
-  { image: '/images/impact-3.jpg', text: 'Civic Engagement' },
-  { image: '/images/impact-4.jpg', text: 'STEM Education' },
-  { image: '/images/impact-5.jpg', text: 'Leadership Summit' },
-  { image: '/images/impact-6.jpg', text: 'Volunteer Day' },
+  { image: '/images/impact/impact-1.jpg', text: 'YoungCEO Workshop' },
+  { image: '/images/impact/impact-2.jpg', text: 'Skills Training' },
+  { image: '/images/impact/impact-3.jpg', text: 'Civic Engagement' },
+  { image: '/images/impact/impact-4.jpg', text: 'STEM Education' },
+  { image: '/images/impact/impact-5.jpg', text: 'Leadership Summit' },
+  { image: '/images/impact/impact-6.jpg', text: 'Volunteer Day' },
   { image: '/images/about/about-1.jpg', text: 'Community Outreach' },
   { image: '/images/about/about-2.jpg', text: 'Youth Empowerment' },
   { image: '/images/about/about-3.jpg', text: 'Team Building' },

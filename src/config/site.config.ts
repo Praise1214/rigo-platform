@@ -5,7 +5,7 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://risinggeneration.org',
   email: 'risinggenerationorg@gmail.com',
   phone: '+234 703 059 3927',
-  whatsapp: 'https://wa.me/234XXXXXXXXXX',
+  whatsapp: 'https://wa.me/2347030593927',
   address: {
     street: '4 Ilupeju Bypass, Olajire House',
     city: 'Onipanu',
@@ -23,7 +23,7 @@ export const siteConfig = {
     {
       id: 'youngceo',
       title: 'YoungCEO Initiative',
-      shortTitle: 'YoungCEO',
+      shortTitle: 'Young CEO',
       tagline: 'Building Tomorrow\'s Business Leaders',
       description: 'Through our programs, we create, encourage and support young entrepreneurs by providing mentorship, training, and access to resources that help them build sustainable businesses. The YoungCEO initiative equips young Nigerians with the entrepreneurial mindset and practical skills needed to launch and grow their ventures.',
       features: [
@@ -52,8 +52,8 @@ export const siteConfig = {
     },
     {
       id: 'unitednigeria',
-      title: 'UnitedNigeria',
-      shortTitle: 'UnitedNigeria',
+      title: 'United Nigeria',
+      shortTitle: 'United Nigeria',
       tagline: 'One Nation, One Vision',
       description: 'Promotes unity, political awareness and nation-building among Nigerian youth. The UnitedNigeria initiative fosters dialogue, civic engagement, and a shared vision for national development. We believe that an informed and united youth population is the foundation of a prosperous Nigeria.',
       features: [

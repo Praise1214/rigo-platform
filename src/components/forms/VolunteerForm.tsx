@@ -232,7 +232,7 @@ export default function VolunteerForm() {
       <button
         type="submit"
         disabled={loading}
-        className="w-full py-3.5 bg-teal hover:bg-teal-dark text-white text-sm font-semibold rounded-full transition-all disabled:opacity-60"
+        className="w-full py-3.5 bg-teal hover:bg-teal-dark text-white text-sm font-semibold rounded-full transition-all disabled:opacity-60 hover:cursor-pointer"
       >
         {loading ? 'Submitting...' : 'Submit Application'}
       </button>

@@ -45,6 +45,13 @@ export default function ContactForm() {
       dialCode: country.dial,
     }
 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(data.email)) {
+      setError('Please enter a valid email address.')
+      setLoading(false)
+      return
+    }
+ 
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
@@ -147,8 +154,6 @@ export default function ContactForm() {
           type="text"
           required
           inputMode="email"
-          pattern="^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$"
-          title="Please enter a valid email address"
           autoComplete="new-password"
           autoCorrect="off"
           autoCapitalize="off"
@@ -210,7 +215,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={loading}
-        className="w-full py-3.5 bg-charcoal hover:bg-charcoal/90 text-white text-sm font-semibold rounded-full transition-all disabled:opacity-60"
+        className="w-full py-3.5 bg-charcoal hover:bg-charcoal/90 text-white text-sm font-semibold rounded-full transition-all disabled:opacity-60 hover: cursor-pointer"
       >
         {loading ? 'Sending...' : 'Submit'}
       </button>

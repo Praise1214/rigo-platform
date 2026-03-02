@@ -105,38 +105,38 @@ export default function Home() {
                   {/* Frame */}
                   <div className="relative rounded-[1.75rem] bg-white/70 backdrop-blur p-[10px] shadow-[0_18px_60px_-30px_rgba(0,0,0,0.45)] ring-1 ring-black/5">
                     {/* Inner border for “crafted” look */}
-                    <div className="rounded-[1.45rem] p-[6px] bg-gradient-to-br from-teal/20 via-white/40 to-accent/20 ring-1 ring-black/5">
-                      {/* Image wrapper */}
-                      <div
-                        className="relative aspect-[4/4] w-full overflow-hidden rounded-[1.2rem] bg-teal-light"
-                      >
-                        <Image
-                          src="/images/who-we-are.jpg"
-                          alt="RIGO Youth Leaders"
-                          fill
-                          className="h-full w-full object-fill"
-                          sizes="(max-width: 1024px) 100vw, 48vw"
-                          priority={false}
-                        />
 
-                        {/* Soft highlight + vignette (makes it feel intentional) */}
-                        <div
-                          aria-hidden
-                          className="pointer-events-none absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.35)_0%,transparent_35%)]"
-                        />
-                        <div
-                          aria-hidden
-                          className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_90%_at_50%_10%,transparent_35%,rgba(0,0,0,0.25)_100%)] opacity-40"
-                        />
-                      </div>
+                    {/* Image wrapper */}
+                    <div
+                      className="relative aspect-[4/4] w-full overflow-hidden rounded-[1.2rem] bg-teal-light"
+                    >
+                      <Image
+                        src="/images/who-we-are.jpg"
+                        alt="RIGO Youth Leaders"
+                        fill
+                        className="h-full w-full object-fill"
+                        sizes="(max-width: 1024px) 100vw, 48vw"
+                        priority={false}
+                      />
+
+                      {/* Soft highlight + vignette (makes it feel intentional) */}
+                      <div
+                        aria-hidden
+                        className="pointer-events-none absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.35)_0%,transparent_35%)]"
+                      />
+                      <div
+                        aria-hidden
+                        className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_90%_at_50%_10%,transparent_35%,rgba(0,0,0,0.25)_100%)] opacity-40"
+                      />
                     </div>
                   </div>
-
                 </div>
 
               </div>
+
             </div>
           </div>
+
         </section>
       </section>
 
@@ -144,7 +144,7 @@ export default function Home() {
       <ImpactCounter />
 
       {/* ─── WHAT WE DO ─── */}
-            <section className="py-10 lg:py-15 bg-teal text-white">
+      <section className="py-10 lg:py-15 bg-teal text-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="heading-display text-[clamp(1.6rem,3.5vw,2.8rem)]">
@@ -167,7 +167,7 @@ export default function Home() {
                     src={`/images/${initiative.id}-1.jpg`}
                     alt={initiative.title}
                     fill
-                    className="object-cover opacity-30 group-hover:opacity-50 group-hover:scale-105 transition-all duration-500"
+                    className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
                     sizes="(max-width: 640px) 100vw, 25vw"
                     loading="lazy"
                   />
@@ -187,7 +187,7 @@ export default function Home() {
         </div>
       </section>
 
-            {/* ─── STORIES ─── */}
+      {/* ─── STORIES ─── */}
       <section className="py-20 lg:py-24 bg-cream">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
           <div className="text-center mb-10">
