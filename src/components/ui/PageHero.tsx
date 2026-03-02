@@ -18,15 +18,15 @@ export default function PageHero({ title, subtitle, accentWord }: PageHeroProps)
         }}
       />
 
-      <div className="relative max-w-[1200px] ml-100 px-6 lg:px-8 py-10 lg:py-12">
+      <div className="relative max-w-[1200px] mx-auto px-6 lg:px-8 pt-24 pb-10 lg:pt-28 lg:pb-12">
         <div className="max-w-3xl">
-          <h1 className="heading-display text-[clamp(2.2rem,5vw,6rem)] text-black mb-5">
+          <h1 className="heading-display text-[clamp(1.8rem,5vw,4rem)] text-black mb-4 lg:mb-5">
             {accentWord ? (
               <>{titleParts[0]}<span className="text-accent">{accentWord}</span>{titleParts[1]}</>
             ) : title}
           </h1>
           {subtitle && (
-            <p className="text-black/60 text-lg max-w-2xl leading-relaxed">
+            <p className="text-black/60 text-base lg:text-lg max-w-2xl leading-relaxed">
               {subtitle}
             </p>
           )}

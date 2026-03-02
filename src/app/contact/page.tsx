@@ -17,7 +17,7 @@ export default function ContactPage() {
     <>
       {/* ── Hero Section: Contact Info + Form ── */}
       <section className="pt-22 pb-20 lg:pt-20 lg:pb-24 bg-gradient-to-b from-[#d0d4db] to-cream">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-4 ml-30">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             {/* Left Column — Contact Info */}
             <div className="pt-4">
@@ -39,21 +39,21 @@ export default function ContactPage() {
               </div>
 
               {/* Three Info Categories */}
-              <div className="grid sm:grid-cols-3 gap-6 pt-8 border-t">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-8 border-t">
                 <div>
                   <h3 className="font-semibold text-charcoal text-[20px] mb-2 font-display ">General Inquiries</h3>
                   <p className="text-charcoal/70 text-[15px] leading-relaxed font-display tracking-wider">
                     Have a question about our programs, events, or how to get involved? Our team is happy to help.
                   </p>
                 </div>
-                <div className='pl-4'>
-                  <h3 className="font-semibold text-charcoal text-[20px] mb-2 font-display">Partnerships</h3>
+                <div>
+                  <h3 className="font-semibold text-charcoal text-base lg:text-[20px] mb-2 font-display">Partnerships</h3>
                   <p className="text-charcoal/70 text-[15px] leading-relaxed font-display tracking-wider">
                     We collaborate with organizations and individuals who share our commitment to empowering young Nigerians.
                   </p>
                 </div>
-                <div className='pl-2'>
-                  <h3 className="font-semibold text-charcoal text-[20px] mb-2 font-display">Media Inquiries</h3>
+                <div>
+                  <h3 className="font-semibold text-charcoal text-base lg:text-[20px] mb-2 font-display">Media Inquiries</h3>
                   <p className="text-charcoal/70 text-[15px] leading-relaxed font-display tracking-wider">
                     For media-related questions or press inquiries, please contact us at {siteConfig.email}.
                   </p>
@@ -62,7 +62,7 @@ export default function ContactPage() {
             </div>
 
             {/* Right Column — Form Card */}
-            <div className="w-full lg:max-w-[560px] lg:ml-auto lg:translate-x-25 bg-white rounded-3xl shadow-[0_8px_60px_rgba(0,0,0,0.08)] p-7 lg:p-15 lg:-mt-4 left-3">
+            <div className="w-full bg-white rounded-3xl shadow-[0_8px_60px_rgba(0,0,0,0.08)] p-7 lg:p-10">
               <h2 className="font-semibold text-charcoal text-xl mb-1 font-display">Get in Touch</h2>
               <p className="text-charcoal/70 text-sm mb-6 font-display">We’d love to hear from you.</p>
               <ContactForm />
@@ -118,7 +118,7 @@ export default function ContactPage() {
             </div>
 
             {/* Location Details */}
-            <div className='ml-20'>
+            <div>
               <span className="inline-block text-[31px] font-bold text-teal uppercase tracking-[0.03em] mb-3 font-display">
                 Our Location
               </span>

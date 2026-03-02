@@ -9,27 +9,27 @@ export default function Footer() {
       <div className="max-w-[1300px] mx-auto px-6 sm:px-8 lg:px-8 pt-14 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
           {/* Brand */}
-          <div className="-mt-10 -ml-3 sm:-ml-4 lg:-ml-22 self-start">
+          <div className="self-start">
             <div className="inline-flex items-center justify-start mb-4">
               <div className="flex items-center">
                 <img
                   src="/RIGO.png"
                   alt="RIGO logo"
-                  className="w-[150px] h-[120px] sm:w-[72px] sm:h-[72px] lg:w-[222px] lg:h-[172px]"
+                  className="w-[72px] h-[72px] lg:w-[100px] lg:h-[100px] shrink-0"
                 />
               </div>
-              <span className="heading-display -ml-3 lg:-mt-5 lg:-ml-10 text-left text-white text-[28px] tracking-[0.06em]">
+              <span className="heading-display text-left text-white text-[20px] lg:text-[26px] tracking-[0.06em] leading-tight">
                 RISING GENERATION
               </span>
             </div>
-            <p className="text-white/100 text-[18px] leading-relaxed max-w-[310px] ml-15 -mt-12 text-left tracking-normal [word-spacing:normal] font-display">
+            <p className="text-white/80 text-sm lg:text-base leading-relaxed max-w-[280px] mt-2 text-left font-display">
               Empowering Nigeria&apos;s next generation of leaders through education, entrepreneurship, and civic engagement.
             </p>
           </div>
 
           {/* Initiatives */}
-          <div className="ml-20 mt-5">
-            <h3 className="text-[21px] font-bold uppercase tracking-[0.15em] text-white/20 mb-5">Initiatives</h3>
+          <div className="mt-0 lg:mt-5">
+            <h3 className="text-base lg:text-[21px] font-bold uppercase tracking-[0.15em] text-white/20 mb-5">Initiatives</h3>
             <ul className="space-y-3">
               {siteConfig.initiatives.map((init) => (
                 <li key={init.id}>
@@ -42,8 +42,8 @@ export default function Footer() {
           </div>
 
           {/* Column 2 */}
-          <div className=" ml-6 mt-5">
-            <h3 className="text-[21px] font-bold uppercase tracking-[0.1em] text-white/30 mb-5">Get Involved</h3>
+          <div className="mt-0 lg:mt-5">
+            <h3 className="text-base lg:text-[21px] font-bold uppercase tracking-[0.1em] text-white/30 mb-5">Get Involved</h3>
             <ul className="space-y-3">
               {[
                 { href: '/donate', label: 'Donate' },
@@ -60,7 +60,7 @@ export default function Footer() {
           </div>
 
           {/* Newsletter */}
-          <div className="mt-5 ml-10">
+          <div className="mt-0 lg:mt-5">
             <h3 className="text-[21px] font-bold uppercase tracking-[0.1em] text-white/30 mb-2">Newsletter</h3>
             <p className="text-white/90 text-[17px] leading-relaxed mb-4 font-display">
               Get updates on our programs, events, and impact stories.
@@ -72,7 +72,7 @@ export default function Footer() {
 
       {/* Large tagline */}
       <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 pb-5">
-        <p className="heading-display text-[clamp(2rem,6vw,5rem)] text-white/[0.20] leading-none">
+        <p className="heading-display text-[clamp(1.4rem,6vw,5rem)] text-white/[0.20] leading-none">
           LEADERS RISING. FUTURES SHAPING.
         </p>
       </div>

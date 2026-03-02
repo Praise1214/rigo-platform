@@ -60,12 +60,10 @@ export default function MembershipPage() {
             </div>
 
             {/* Form */}
-            <div>
-            <div className="w-full lg:max-w-[560px] lg:ml-auto lg:translate-x-25 bg-white rounded-3xl shadow-[0_8px_60px_rgba(0,0,0,0.08)] p-7 lg:p-15 lg:-mt-4 left-3">
+            <div className="w-full bg-white rounded-3xl shadow-[0_8px_60px_rgba(0,0,0,0.08)] p-7 lg:p-10">
               <h2 className="font-semibold text-charcoal text-xl mb-1 font-display">Become a Member</h2>
               <p className="text-charcoal/70 text-sm mb-6 font-display">Join RIGO and be part of a movement empowering Nigeria’s youth</p>
               <MembershipForm />
-            </div>
             </div>
           </div>
         </div>

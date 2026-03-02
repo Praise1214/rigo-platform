@@ -12,7 +12,7 @@ export default function SectionHeading({ label, title, subtitle, centered = true
   return (
     <div className={`mb-12 ${centered ? 'text-center' : ''}`}>
       {label && (
-        <span className="inline-block text-[32px] font-bold uppercase tracking-[0.03em] text-teal mb-1">
+        <span className="inline-block text-[24px] lg:text-[32px] font-bold uppercase tracking-[0.03em] text-teal mb-1">
           {label}
         </span>
       )}

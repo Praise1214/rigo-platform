@@ -80,7 +80,7 @@ export default function FoundersSection() {
   }, [hasAnimated])
 
   return (
-    <section ref={sectionRef} className="py-20 lg:py-10 bg-cream" aria-labelledby="founders-heading">
+    <section id="founders" ref={sectionRef} className="py-20 lg:py-10 bg-cream" aria-labelledby="founders-heading">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-6">
         <SectionHeading
           label="Leadership"

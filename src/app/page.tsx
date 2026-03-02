@@ -44,7 +44,7 @@ export default function Home() {
     <>
       <section className="">
         <div className="max-w-[1500px] mx-auto px-6 lg:px-8 py-6">
-          <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: '16 / 7' }}>
+          <div className="relative rounded-2xl overflow-hidden aspect-[4/3] sm:aspect-[16/9] lg:aspect-[16/7]">
             <Image
               src="/images/showcase-digital-skills.JPG"
               alt="RIGO facilitator leading a Google Digital Skills workshop"
@@ -54,14 +54,14 @@ export default function Home() {
               sizes="(max-width: 1200px) 100vw, 1200px"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-8 top-23">
+            <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-8">
               <div className="max-w-lg p-3">
-                <h2 className="heading-display font-extrabold text-[clamp(2rem,5.8vw,3.6rem)] text-white mb-2 leading-[1.15]">
+                <h2 className="heading-display font-extrabold text-[clamp(1.4rem,5.8vw,3.6rem)] text-white mb-2 leading-[1.15]">
                   <span className="block">EMPOWERING NIGERIA</span>
-                  <span className="block mt-5">YOUTH,</span>
-                  <span className="block mt-5">INSPIRING CHANGE</span>
+                  <span className="block mt-3 sm:mt-5">YOUTH,</span>
+                  <span className="block mt-3 sm:mt-5">INSPIRING CHANGE</span>
                 </h2>
-                <Link href="/initiatives" className="btn-pill btn-pill-primary text-[20px] py-2.5 px-5 mt-7">
+                <Link href="/initiatives" className="btn-pill btn-pill-primary text-sm sm:text-base py-2.5 px-5 mt-4 sm:mt-7">
                   See Our Initiatives
                 </Link>
               </div>
@@ -73,7 +73,7 @@ export default function Home() {
       {/* WHO WE ARE */}
       <section>
         <section className="py-20 lg:py-24 bg-white">
-          <div className="max-w-[1200px] mx-6 px-6 lg:px-8">
+          <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <span className="text-[31px] font-bold uppercase tracking-[0.1em] text-teal mb-3 block font-montserrat">Who We Are</span>
@@ -94,8 +94,7 @@ export default function Home() {
                   Learn More About Us
                 </Link>
               </div>
-              <div ref={whoWeAreFrameRef} className="relative w-full max-w-[620px] ml-40 max-h-[700px]">
-                <div ref={whoWeAreFrameRef} className="relative w-full max-w-[620px] ml-auto">
+              <div ref={whoWeAreFrameRef} className="relative w-full max-w-[620px] mx-auto lg:ml-auto">
                   {/* Soft ambient glow (subtle) */}
                   <div
                     aria-hidden
@@ -132,8 +131,6 @@ export default function Home() {
                   </div>
                 </div>
 
-              </div>
-
             </div>
           </div>
 
@@ -150,7 +147,7 @@ export default function Home() {
             <h2 className="heading-display text-[clamp(1.6rem,3.5vw,2.8rem)]">
               WHAT WE DO
             </h2>
-            <p className="mt-4 text-white  text-xl  mx-auto font-display font-bold">
+            <p className="mt-4 text-white text-base lg:text-xl max-w-2xl mx-auto font-display font-bold">
               Education, entrepreneurship, and civic engagement, turning potential into lasting change.
             </p>
           </div>
