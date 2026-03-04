@@ -7,7 +7,6 @@ import SectionHeading from '../ui/SectionHeading';
 interface Founder {
   name: string
   role: string
-  bio: string
   image: string
 }
 
@@ -15,38 +14,33 @@ const founders: Founder[] = [
   {
     name: 'OLAJIRE OMIKUNLE',
     role: 'Co-Founder',
-    bio: 'A visionary leader committed to empowering Nigerian youth through innovative programs and strategic partnerships across the nation.',
+
     image: '/images/founders/jire1.png',
   },
 
   {
     name: 'TOPE IMASEKHA',
     role: 'Founding Member',
-    bio: 'A seasoned relationship builder who forges strategic alliances with governments, organizations, and communities to advance youth empowerment.',
     image: '/images/founders/adesuwa1.png',
   },
   {
     name: 'MUKTAR SHAGAYA',
     role: 'Co-Founder',
-    bio: 'An accomplished strategist with deep expertise in youth development, policy advocacy, and building sustainable social enterprises.',
     image: '/images/founders/mukthar1.png',
   },
   {
     name: 'GBOLAHAN OGUNNUSI',
     role: 'Founding Member',
-    bio: 'A passionate advocate for education and community development, driving impactful programs that reach thousands of young Nigerians.',
     image: '/images/founders/Gbolahan1.png',
   },
   {
     name: 'EIZU UWAOMA',
     role: 'Founding Member',
-    bio: 'A results-driven leader focused on operational excellence and scaling initiatives that create lasting change in communities.',
     image: '/images/founders/eizu.png',
   },
   {
     name: 'AKINKUNMI THOMAS',
     role: 'Co-Founder',
-    bio: 'A seasoned relationship builder who forges strategic alliances with governments, organizations, and communities to advance youth empowerment.',
     image: '/images/founders/akinkunmi1.png',
   },
 ]
@@ -118,9 +112,6 @@ export default function FoundersSection() {
                 </h3>
                 <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-teal mb-3">
                   {founder.role}
-                </p>
-                <p className="text-charcoal/50 text-sm leading-relaxed">
-                  {founder.bio}
                 </p>
               </div>
             </article>
